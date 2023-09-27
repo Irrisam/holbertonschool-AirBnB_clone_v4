@@ -8,14 +8,11 @@
     <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css">
     <link type="text/css" rel="stylesheet" href="../static/styles/8-places.css">
     <link rel="icon" href="../static/images/icon.png" />
-    <link rel="icon" href="../static/images/icon.png?cache_id=cache_id" />
+    <link rel="icon" href="../static/images/icon.png?cache_id={{ cache_id }}" />
     <script type="text/javascript" src="../static/scripts/1-hbnb.js"></script>
-    <script src="static/scripts/1-hbnb.js?cache_id=cache_id"></script>
+    <script src="static/scripts/1-hbnb.js?cache_id={{ cache_id }}"></script>
     <title>HBnB</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <style> 
-        .checkbox {padding-left: 10px;}
-    </style>
   </head>
   <body>
     <header>
@@ -47,9 +44,7 @@
       <div class="popover">
         <ul>
           {% for amenity in amenities %}
-          <li input type="checkbox">{{ amenity.name }}
-            <input type="checkbox" style="position: absolute; left: 10px;" data-id=":amenity_id">
-          </li>
+          <li><input data-id="{{ amenity.id }}" data-name="{{ amenity.name }}" type="checkbox"> {{ amenity.name }}</li>
           {% endfor %}
         </ul>
       </div>
